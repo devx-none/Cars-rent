@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Ma description personnalisée">
+  <title>Cars Rent</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body class="containerr">
+
+  <nav>
+    <div class="logo">
+      <h4><span>Cars</span> Rent</h4>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="gallerie.html">Gallery</a></li>
+      <li><a href="booking.html">Reservation</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+
+  </nav>
+  <section class="contentt">
+
+    <div class="titre">
+      <p>Rent and purchase of fast cars</p>
+      <h1><span>W</span>e <span>M</span>ove <br><span>D</span>ream</h1>
+      <h4>Get you fast car in a fast way</h4>
+     <a href="booking.html"> <input type="submit" name=""  value="Reserve Now"></a>
+    </div>
+  </section>
+  <footer class="footer">
+    
+     <div class="about">
+      <h1>RentsCar.com</h1>
+      <p>Guaranteeing car rentals in 160 countries and 40 languages, Rentalcars.com is the largest car rental reservation service in the world. In collaboration with the largest suppliers, we offer you great rates on all types of cars, including luxury vehicles, minivans, vans and cars with automatic transmission. With a multilingual call center open 7 days a week, we can find you the best rental rates when you want - where you want.</p>
+    </div>
+    <div class="copy">
+    <p>©carsrent All Rights Reserved. 2021</p>
+    </div>
+  </footer>
+
+  <script>
+    function navSlide() {
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector(".nav-links");
+      const navLinks = document.querySelectorAll(".nav-links li");
+
+      burger.addEventListener("click", () => {
+        //Toggle Nav
+        nav.classList.toggle("nav-active");
+
+        //Animate Links
+        navLinks.forEach((link, index) => {
+          if (link.style.animation) {
+            link.style.animation = ""
+          } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+          }
+        });
+        //Burger Animation
+        burger.classList.toggle("toggle");
+      });
+
+    }
+
+    navSlide();
+  </script>
+</body>
+
+</html>

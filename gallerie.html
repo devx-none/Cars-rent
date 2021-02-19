@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallerye</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav style="background-color: black;">
+        <div class="logo">
+            <h4><span>Cars</span> Rent</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="accueil.html">Home</a></li>
+            <li class="active"><a href="gallerie.html">Gallery</a></li>
+            <li><a href="booking.html">Reservation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+    </nav>
+    <div class="container">
+        <h2>Gallery</h2>
+
+        <ul class="filter-menu">
+            <li data-target="all">All</li>
+            <li data-target="moto">Moto</li>
+            <li data-target="citadine">Citadine</li>
+            <li data-target="compact">Compact</li>
+            <li data-target="berline">Berline</li>
+            <li data-target="utlitaire">Utilitaire</li>
+            <li data-target="engine">Engine de Chantier</li>
+            <li data-target="camion">Camion</li>
+
+        </ul>
+
+        <ul class="filter-item">
+            <li data-item="moto"><img src="images/moto1.jpg" alt=""></li>
+            <li data-item="moto"><img src="images/moto2.jpg" alt=""></li>
+            <li data-item="citadine"><img src="images/c1.jpg" alt=""></li>
+            <li data-item="citadine"><img src="images/c2.jpg" alt=""></li>
+            <li data-item="engine"><img src="images/en1.jpg" alt=""></li>
+            <li data-item="engine"><img src="images/en4.jpg" alt=""></li>
+            <li data-item="citadine"><img src="images/c3.jpg" alt=""></li>
+            <li data-item="citadine"><img src="images/c4.jpg" alt=""></li>
+            <li data-item="citadine"><img src="images/c5.jpg" alt=""></li>
+            <li data-item="moto"><img src="images/moto3.jpg" alt=""></li>
+            <li data-item="moto"><img src="images/moto4.jpg" alt=""></li>
+            <li data-item="engine"><img src="images/en3.jpg" alt=""></li>
+            <li data-item="engine"><img src="images/en2.jpg" alt=""></li>
+            <li data-item="compact"><img src="images/cm1.jpg" alt=""></li>
+            <li data-item="compact"><img src="images/cm2.jpg" alt=""></li>
+            <li data-item="compact"><img src="images/cm3.jpg" alt=""></li>
+            <li data-item="berline"><img src="images/b1.jpg" alt=""></li>
+            <li data-item="berline"><img src="images/b2.jpg" alt=""></li>
+            <li data-item="berline"><img src="images/b3.jpg" alt=""></li>
+            <li data-item="berline"><img src="images/b3.jpg" alt=""></li>
+            <li data-item="utlitaire"><img src="images/u1.jpg" alt=""></li>
+            <li data-item="utlitaire"><img src="images/u1.jpg" alt=""></li>
+            <li data-item="utlitaire"><img src="images/u3.jpg" alt=""></li>
+            <li data-item="utlitaire"><img src="images/u2.jpg" alt=""></li>
+            <li data-item="camion"><img src="images/cam1.jpg" alt=""></li>
+            <li data-item="camion"><img src="images/cam2.jpg" alt=""></li>
+            <li data-item="camion"><img src="images/cam2.jpg" alt=""></li>
+            <li data-item="camion"><img src="images/cam3.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <script src="filter.js"></script>
+    <script>
+        function navSlide() {
+            const burger = document.querySelector(".burger");
+            const nav = document.querySelector(".nav-links");
+            const navLinks = document.querySelectorAll(".nav-links li");
+
+            burger.addEventListener("click", () => {
+                //Toggle Nav
+                nav.classList.toggle("nav-active");
+
+                //Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = ""
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+                    }
+                });
+                //Burger Animation
+                burger.classList.toggle("toggle");
+            });
+
+        }
+
+        navSlide();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleB.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body >
+    <nav style="background-color: black;">
+        <div class="logo">
+            <h4 ><span>Cars</span> Rent</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="accueil.html">Home</a></li>
+            <li><a href="gallerie.html">Gallery</a></li>
+            <li><a href="booking.html">Reservation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+    </nav>
+    
+    <div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="form-header">
+							<h1>Book a car</h1>
+						</div>
+						<form name="formMarque">
+							<div class="row">
+								
+									<div class="form-group">
+                                        <span class="form-label">Type:</span>
+                                        <!-- <label for="type1">Moto</label>
+										<input type="radio" id="type1" name="type" onclick="checkRadio(name)">
+				                         
+                                        <label for="type2">Citadine</label>
+				                        <input type="radio" id="type2" name="type" onclick="checkRadio(name)">
+                                        <label for="type3">Compact</label>
+				                        <input type="radio" id="type3" name="type" onclick="checkRadio(name)">
+				                          
+                                        <label for="type4">Berline</label>
+				                        <input type="radio" id="type4" name="type" onclick="checkRadio(name)">
+				                          
+                                        <label for="type5">Utilitaire</label>
+				                        <input type="radio" id="type5" name="type" onclick="checkRadio(name)">
+
+                                        <label for="type6">Engin de Chantier</label>
+				                        <input type="radio" id="type6" name="type" onclick="checkRadio(name)">
+				                          
+                                        <label for="type7">Camion</label>
+				                        <input type="radio" id="type7" name="type" onclick="checkRadio(name)"> -->
+                                        <select name="Type" onchange="checkRadio()">
+                                            <option SELECTED>--------------</option>
+                                            <option >Moto</option>
+                                            <option >Citadine</option>
+                                            <option >Compact</option>
+                                            <option >Berline</option>
+                                            <option >Utilitaire</option>
+                                            <option >Engine de chantier</option>
+                                            <option >Camion</option>
+                            
+                                        </select>
+			  	                          
+									</div>
+								
+								
+							</div>
+							<div class="form-group">
+								<span class="form-label">Carburant</span>
+								<select name="ListeCar">
+									<option SELECTED >-- Sélectionnez une type --</option>
+								</select>
+								
+								
+							</div>
+							<div class="form-group">
+								<span class="form-label">boite a vitesse</span>
+								<select name="vitesse">
+									<option SELECTED>--------------</option>
+					
+								</select>
+							</div>
+							<div class="form-group">
+								<span class="form-label" >Days:</span>
+								<input class="form-control" id="days" type="number" >
+							</div>
+							<div class="row">
+								
+									<div class="form-group">
+										<span class="form-label">Price:</span>
+										<input class="form-control" id="prix" type="text" readonly>
+									</div>
+								
+								
+							</div>
+							<div class="form-btn">
+								<button class="submit-btn" onclick="price(this)">Book Now</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script>
+        function navSlide() {
+            const burger = document.querySelector(".burger");
+            const nav = document.querySelector(".nav-links");
+            const navLinks = document.querySelectorAll(".nav-links li");
+
+            burger.addEventListener("click", () => {
+                //Toggle Nav
+                nav.classList.toggle("nav-active");
+
+                //Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = ""
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+                    }
+                });
+                //Burger Animation
+                burger.classList.toggle("toggle");
+            });
+
+        }
+
+        navSlide();
+
+
+        function checkRadio() {//TYPe
+            var Moto = new Array("Electrique", "Essence");
+            var Citadine = new Array("Electrique", "Hybride", "Essence", "Diesel");
+            var Compact = new Array("Hybride", "Essence", "Diesel");
+            var Berline = new Array("Hybride", "Essence", "Diesel");
+            var Utilitaire = new Array("Diesel");
+            var EnginCh = new Array("Essence", "Diesel");
+            var Camion = new Array("Diesel");
+            var d = document.formMarque.ListeCar;
+            var t=document.formMarque.Type.selectedIndex;
+            var days=document.getElementById("days");
+            
+            /* vitess*/
+            var v = document.formMarque.vitesse;
+            // var r1 = document.getElementById("type1").checked;
+            // var r2 = document.getElementById("type2").checked;
+            // var r3 = document.getElementById("type3").checked;
+            // var r4 = document.getElementById("type4").checked;
+            // var r5 = document.getElementById("type5").checked;
+            // var r6 = document.getElementById("type6").checked;
+            // var r7 = document.getElementById("type7").checked;
+            var prix=0;
+            
+            /*Moto*/
+            if (t == 1) {
+                d.length = 1;
+                v.length=1;
+
+               
+                for (var i = 0; i < Moto.length; i++) {
+                    d.length++;
+                    d.options[i + 1].text = Moto[i];
+                }
+
+            }
+
+            /*Citadine*/
+
+            if (t == 2) {
+                d.length = 1;
+                
+                for (var i = 0; i < Citadine.length; i++) {
+                    d.length++;
+                    d.options[i + 1].text = Citadine[i];
+                }
+              
+               
+
+            }
+             /*Compact*/
+            if (t == 3) {
+                d.length = 1;
+                
+                for (var i = 0; i < Compact.length; i++) {
+                    d.length++;
+                    d.options[i + 1].text = Compact[i];
+                }
+
+            }
+            /*Berline*/
+
+            if (t == 4) {
+                d.length = 1;
+               
+                for (var i = 0; i < Berline.length; i++) {
+                    d.length++;
+                    d.options[i + 1].text = Berline[i];
+                }
+
+            }
+            /*Utilitaire*/
+
+            if (t == 5) {
+                d.length = 1;
+               
+                for (var i = 0; i < Utilitaire.length; i++) {
+                    d.length++;
+                    d.options[i + 1].text = Utilitaire[i];
+                }
+
+            }
+            /*Engin chantier*/
+
+            if (t == 6) {
+                d.length = 1;
+                
+                for (var i = 0; i < EnginCh.length; i++) {
+                    d.length++;
+                    d.options[i + 1].text = EnginCh[i];
+                }
+
+            }
+            /*Camion*/
+
+            if (t == 7) {
+                d.length = 1;
+               
+                for (var i = 0; i < Camion.length; i++) {
+                    d.length++;
+                    d.options[i + 1].text = Camion[i];
+                }
+
+            }
+
+
+            /*boite vitesse*/
+            if ((t == 2) || (t == 3) || (t == 5) || (t == 6)) {
+                v.length = 1;
+                v.length++;
+                v.options[1].text = "Manuelle";
+                
+
+            }
+            if ((t == 4) || (t == 7)) {
+                v.length = 1;
+                v.length++;
+                v.options[1].text = "Automatique";
+              
+
+               
+            }
+           
+        }
+        function price(ev)
+        {
+        console.log(ev);
+        event.preventDefault();
+            var t=document.formMarque.Type.value;
+            var carbu=document.formMarque.ListeCar.value;
+            var d = document.formMarque.ListeCar.selectedIndex;
+            var days = document.getElementById("days").value;
+            let price=0;
+            const typeC=new Array("Moto","Citadine","Compact","Berline","Utilitaire","Engine de chantier","Camion");
+            const priceT=new Array(10,12,14,20.19,16,900,250.19);
+            const Carb=new Array("Electrique","Hybride","Essence","Diesel");
+            const porc=new Array(0.05,0.09,0.14,0.21);
+            for(let i=0 ;i<=t.length;i++)
+            {
+                
+                if(t==typeC[i])
+                {
+                    for(let j=0;j<Carb.length;j++)
+                    {
+                        if(carbu==Carb[j])
+                        {
+                       
+                            price=(porc[j]*priceT[i])+priceT[i];
+                            
+                        }
+                    }
+                   
+                }
+               
+            }
+            price=price*days;
+            document.getElementById("prix").value=price+"Euro";
+            
+            
+            
+            
+        }
+
+           
+        
+        //     if(t==1 && d==2)
+        //     {
+        //       price=10+14/100;
+              
+        //     }
+        //     if(t==1 && d==1)
+        //     {
+        //       price=10+5/100;
+              
+        //     }
+        //     if(t==2 && d==1)
+        //     {
+        //       price=12+5/100;
+              
+        //     }
+        //     if(t==2 && d==2)
+        //     {
+        //       price=12+9/100;
+              
+        //     }
+        //     if(t==2 && d==3)
+        //     {
+        //       price=12+14/100;
+              
+        //     }
+        //     if(t==2 && d==4)
+        //     {
+        //       price=21+9/100;
+              
+        //     }
+        //     price=days*price;
+        //     // document.getElementById("prix").innerText=price;
+        //     alert(price);
+        // }
+        
+
+        
+
+    </script>
+
+</body>
+
+</html>
