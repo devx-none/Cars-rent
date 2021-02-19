@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cars rent</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -17,7 +17,7 @@
             <h4><span>Cars</span> Rent</h4>
         </div>
         <ul class="nav-links">
-            <li><a href="accueil.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="gallerie.html">Gallery</a></li>
             <li><a href="booking.html">Reservation</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -68,11 +68,15 @@
                     <span>Full Name</span>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="" required="required">
+                    <input type="text" id="emailv" name="" required="required">
                     <span>Email</span>
                 </div>
                 <div class="inputBox">
-                    <textarea type="text" required="required"></textarea>
+                    <input type="text" id="subjv" name="" required="required">
+                    <span>Subject</span>
+                </div>
+                <div class="inputBox">
+                    <textarea type="text" id="msgv" required="required"></textarea>
                     <span> Type your Message...</span>
                 </div>
                 <div class="inputBox">
@@ -87,7 +91,10 @@
     
     <h3>Thank You</h3>
     <p id="name"></p>
-    <p>Your message has been sent successfully</p>
+    <p id="email"></p>
+    <p id="subj"></p>
+    <p id="msg"></p>
+    <!-- <p>Your message has been sent successfully</p> -->
 </div>
         </div>
 
@@ -123,12 +130,22 @@
 
      function popup()
      {
+        event.preventDefault();
          let fullname=document.getElementById('nom').value;
-         let  nameN=document.getElementById("name");
+         let emailV=document.getElementById('emailv').value;
+         let subjv=document.getElementById('subjv').value;
+         let msgv=document.getElementById('msgv').value;
+         let nameN=document.getElementById("name");
+         let email=document.getElementById("email");
+         let subj=document.getElementById("subj");
+         let msg=document.getElementById("msg");
          var pop = document.querySelector('.popup');
 
         pop.classList.add('popup-active');
         nameN.innerText=fullname;
+        email.innerText=emailV;
+        subj.innerText=subjv;
+        msg.innerText=msgv;
 
      }
     document.getElementById("cl").addEventListener("click",close);
