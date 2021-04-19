@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta name="description" content="Ma description personnalisée">
   <title>Cars Rent</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </head>
 
@@ -32,22 +34,71 @@
   <section class="contentt">
 
     <div class="titre">
-      <p>Rent and purchase of fast cars</p>
+      <h4>Rent and purchase of fast cars</h4>
       <h1><span>W</span>e <span>M</span>ove <br><span>D</span>ream</h1>
       <h4>Get you fast car in a fast way</h4>
-     <a href="booking.html"> <input type="submit" name=""  value="Reserve Now"></a>
     </div>
-  </section>
-  <footer class="footer">
+    <a href="booking.html"> <input type="submit" name=""  value="Reserve Now"></a>
     
+  </section>
+  <div class="about_location">
+    <h1><span>R</span>ents<span>C</span>ar.com</h1>
      <div class="about">
-      <h1>RentsCar.com</h1>
-      <p>Guaranteeing car rentals in 160 countries and 40 languages, Rentalcars.com is the largest car rental reservation service in the world. In collaboration with the largest suppliers, we offer you great rates on all types of cars, including luxury vehicles, minivans, vans and cars with automatic transmission. With a multilingual call center open 7 days a week, we can find you the best rental rates when you want - where you want.</p>
+      
+      <div class="about_us">
+        <img src="images/close-up-photo-keys-lying-donw-inside-brand-new-modern-car.jpg"/>
+      </div>
+       <div  class="about_us">
+      
+      <p>Guaranteeing car rentals in 160 countries and 40 languages, Rentscars.com is the largest car rental reservation service in the world. In collaboration with the largest suppliers, we offer you great rates on all types of cars, including luxury vehicles, minivans, vans and cars with automatic transmission. With a multilingual call center open 7 days a week, we can find you the best rental rates when you want - where you want.Guaranteeing car rentals in 160 countries and 40 languages, Rentscars.com is the largest car rental reservation service in the world. In collaboration with the largest suppliers, we offer you great rates on all types of cars, including luxury vehicles, minivans, vans and cars with automatic transmission. With a multilingual call center open 7 days a week, we can find you the best rental rates when you want - where you want.</p>
     </div>
-    <div class="copy">
-    <p>©carsrent All Rights Reserved. 2021</p>
+    
     </div>
-  </footer>
+   
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">View Booking</a></li>
+           
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#">Magazin</a></li>
+            <li><a href="#">RentalGuides</a></li>
+            <li><a href="#">Car Rental Deal</a></li>
+            <li><a href="#">Language</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>            </a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
 
   <script>
     function navSlide() {
@@ -59,14 +110,7 @@
         //Toggle Nav
         nav.classList.toggle("nav-active");
 
-        //Animate Links
-        navLinks.forEach((link, index) => {
-          if (link.style.animation) {
-            link.style.animation = ""
-          } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-          }
-        });
+    
         //Burger Animation
         burger.classList.toggle("toggle");
       });

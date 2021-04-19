@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars rent</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
@@ -68,7 +68,7 @@
                     <span>Full Name</span>
                 </div>
                 <div class="inputBox">
-                    <input type="text" id="emailv" name="" required="required">
+                    <input type="text" id="emailv" name="" required="required" >
                     <span>Email</span>
                 </div>
                 <div class="inputBox">
@@ -99,6 +99,50 @@
         </div>
 
     </section>
+    <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">View Booking</a></li>
+           
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#">Magazin</a></li>
+            <li><a href="#">RentalGuides</a></li>
+            <li><a href="#">Car Rental Deal</a></li>
+            <li><a href="#">Language</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>            </a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
+
 
     <script>
         function navSlide() {
@@ -110,14 +154,7 @@
                 //Toggle Nav
                 nav.classList.toggle("nav-active");
 
-                //Animate Links
-                navLinks.forEach((link, index) => {
-                    if (link.style.animation) {
-                        link.style.animation = ""
-                    } else {
-                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-                    }
-                });
+               
                 //Burger Animation
                 burger.classList.toggle("toggle");
             });
@@ -142,10 +179,10 @@
          var pop = document.querySelector('.popup');
 
         pop.classList.add('popup-active');
-        nameN.innerText=fullname;
-        email.innerText=emailV;
-        subj.innerText=subjv;
-        msg.innerText=msgv;
+        nameN.innerText="name:"+fullname;
+        email.innerText="email:"+emailV;
+        subj.innerText="subject:"+subjv;
+        msg.innerText="message:"+msgv;
 
      }
     document.getElementById("cl").addEventListener("click",close);
